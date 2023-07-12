@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hove</title>
+
+    <style>
+    body {	
+      display: flex;	
+      align-items: center;	
+      justify-content: center;	
+      height: 100vh;	
+      margin: 0;	
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #blue {
+      background-color: blue;
+      color: white;
+    }
+
+    #red {
+      background-color: red;
+      color: white;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <div id="blue" class="box">Before Hover</div>
+    <div id="red" class="box">After Hover</div>
+
+    <script>
+        const blueDiv = document.getElementById('blue');
+        const redDiv = document.getElementById('red');
+
+        blueDiv.addEventListener('mouseover', () => {
+            blueDiv.style.display = 'none';
+            redDiv.style.display = 'block';
+        });
+
+        redDiv.addEventListener('mouseout', () => {
+            redDiv.style.display = 'none';
+            blueDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

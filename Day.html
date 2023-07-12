@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day</title>
+</head>
+<body>
+    <h1>Last Day of Month</h1>
+    <form>
+        <label for="month">Month:</label>
+        <input type="number" id="month" min="1" max="12" required>
+
+        <button type="button" onclick="getLastDayOfMonth()">Last Day</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function getLastDayOfMonth() {
+            const month = document.getElementById('month').value;
+
+            const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+
+            const lastDayOfMonth = new Date(0, month, 0).getDate();
+
+            const result = document.getElementById('result');
+            result.textContent = `Last day of ${monthNames[month - 1]}: ${lastDayOfMonth}`;
+        }
+    </script>
+</body>
+</html>

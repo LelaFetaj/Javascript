@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <h1>Object Properties</h1>
+
+  <script>
+    let user = {
+      first_name: "John",
+      last_name: "Smith",
+      age: "38",
+      department: "Software"
+    };
+
+    console.log("Object's properties:");
+    for (let key in user) {
+      console.log(key + ": " + user[key]);
+    }
+
+    let secondProperty = Object.keys(user)[1];
+    delete user[secondProperty];
+    console.log("\nAfter deleting the second property (" + secondProperty + "):", user);
+
+    let objectLength = Object.keys(user).length;
+    console.log("\nThe object's length:", objectLength);
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name</title>
+    
+    <style>
+        body {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+        
+        .container {
+          display: flex;
+        }
+    
+        .box {
+          width: 100px;
+          height: 100px;
+          background-color: lightgray;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 60px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+    
+        .box + .box {
+          margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    
+      <script>
+        const boxes = document.querySelectorAll('.box');
+    
+        const myName = 'Aurela'; 
+    
+        boxes.forEach((box, index) => {
+          const letter = document.createElement('span');
+          letter.textContent = myName[index];
+          letter.style.visibility = 'hidden';
+          box.appendChild(letter);
+    
+          box.addEventListener('mouseover', () => {
+            letter.style.visibility = 'visible';
+          });
+    
+          box.addEventListener('mouseout', () => {
+            letter.style.visibility = 'hidden';
+          });
+        });
+      </script>
+</body>
+</html>
